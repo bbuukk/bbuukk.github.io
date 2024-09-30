@@ -1,0 +1,44 @@
+{
+    "name": "My Web App",
+    "short_name": "My App",
+    "description": "A sample progressive web application",
+    "icons": [
+      {
+        "src": "/images/icons/icon-72x72.png",
+        "type": "image/png",
+        "sizes": "72x72"
+      },
+      {
+        "src": "/images/icons/icon-96x96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "/images/icons/icon-144x144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "theme_color": "#2196f3",
+    "background_color": "#ffffff",
+    "orientation": "portrait",
+    "scope": "/",
+    "permissions": [],
+    "splash_screens": [
+      {
+        "src": "/images/splashscreens/splash-640x1136.png",
+        "type": "image/png",
+        "sizes": "640x1136",
+        "density": "2.0"
+      },
+      {
+        "src": "/images/splashscreens/splash-750x1334.png",
+        "type": "image/png",
+        "sizes": "750x1334",
+        "density": "2.0"
+      }
+    ]
+  }
+  
