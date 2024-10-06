@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config ./cfg/webpack/webpack.common.js",
-    "dev": "nodemon --watch \"./cfg/webpack/webpack.*.*\" --exec \"npm run start\"",
-    "start": "webpack-dev-server --open --config ./cfg/webpack/webpack.common.js"
+    "build": "webpack --config ./cfg/webpack/index.js",
+    "dev": "nodemon --watch \"./cfg/webpack/*.*\" --exec \"npm run start\"",
+    "start": "webpack-dev-server --config ./cfg/webpack/index.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,6 @@
     "> 1%",
     "not dead"
   ],
-  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "clean-webpack-plugin": "^4.0.0",
@@ -48,8 +47,8 @@
     "postcss-loader": "^8.1.1",
     "prettier": "^3.3.3",
     "resolve-url-loader": "^5.0.0",
-    "sass": "^1.77.8",
-    "sass-loader": "^14.2.1",
+    "sass": "^1.79.4",
+    "sass-loader": "^16.0.2",
     "style-loader": "^4.0.0",
     "swc-loader": "^0.2.6",
     "url-loader": "^4.1.1",
