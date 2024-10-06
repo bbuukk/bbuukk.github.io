@@ -1,6 +1,6 @@
-@import './normalize.global.scss';
-@import './variables.global.scss';
-@import './reset.global.scss';
+@import "./normalize.global.scss";
+@import "./variables.global.scss";
+@import "./reset.global.scss";
 
 html {
   overscroll-behavior: none;
@@ -10,7 +10,7 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 
-    font-family: 'Ubuntu';
+    font-family: "Ubuntu";
 
     p,
     h1,
@@ -96,7 +96,7 @@ html {
 
   // todo lazy ship
   menu-button {
-    div[slot='inner-nav-menu'] {
+    div[slot="inner-nav-menu"] {
       position: absolute;
       top: 0;
       left: 0;
@@ -124,10 +124,11 @@ html {
 
           &:has(ul.submenu) {
             position: relative;
+
             ::after {
               font-size: 1.5rem;
               line-height: 0;
-              content: '›';
+              content: "›";
 
               position: absolute;
               left: 105%;
@@ -168,14 +169,14 @@ html {
     }
 
     &.fade-in {
-      div[slot='inner-nav-menu'] {
+      div[slot="inner-nav-menu"] {
         ul {
         }
       }
     }
 
     &.fade-out {
-      div[slot='inner-nav-menu'] {
+      div[slot="inner-nav-menu"] {
         ul {
         }
       }
