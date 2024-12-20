@@ -9,6 +9,7 @@ window._app = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('Router initializing');
   window._app.router.init();
 });
 

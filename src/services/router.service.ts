@@ -7,26 +7,12 @@ export interface IRouter {
 
 const Router: IRouter = {
   init: async () => {
-    await Router.go(location.pathname, false)
-      .then(() => {
-        const internalLinks = $$('a.inLink');
-
-        internalLinks.forEach((e) => {
-          const anchorElement = e as HTMLAnchorElement;
-
-          anchorElement.on('click', (event) => {
-            event.preventDefault();
-
-            const url = new URL(anchorElement.href).pathname;
-
-            Router.go(url);
-          });
-        });
-      })
-      .catch((error) => {
-        // TODO: display error screen
-        console.error('Error during router initialization:', error);
-      });
+    try {
+      await Router.go(location.pathname);
+    } catch (err) {
+      // TODO: display error screen
+      console.error('Error during router initialization:', err);
+    }
 
     window.on('popstate', (event) => {
       Router.go(event.state.route, false);
@@ -50,8 +36,26 @@ const Router: IRouter = {
 
       window.scrollY = 0;
       window.scrollX = 0;
+
+      hydrateInternalLinks('inLink');
     }
   }
 };
+
+function hydrateInternalLinks(inLinkClass: string) {
+  const internalLinks = $$(`a.${inLinkClass}`);
+
+  internalLinks.forEach((e) => {
+    const anchorElement = e as HTMLAnchorElement;
+
+    anchorElement.on('click', (event) => {
+      event.preventDefault();
+
+      const url = new URL(anchorElement.href).pathname;
+
+      Router.go(url);
+    });
+  });
+}
 
 export default Router;
