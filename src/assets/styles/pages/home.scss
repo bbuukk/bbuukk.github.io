@@ -1,0 +1,89 @@
+@use '@styles/elements/index' as *;
+@use '@styles/settings/index' as *;
+
+.container--home {
+  @extend .container;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.legend {
+  padding: 0 5rem;
+}
+
+.legend__text {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+  border: 1rem dotted lighten($color: $color-blu-defrance, $amount: 30%);
+
+  text-align: center;
+  font-size: 1.2rem;
+
+  span {
+    display: block;
+  }
+}
+
+/* .legend__greetings { */
+/* } */
+/**/
+/* .legend__motivation { */
+/* } */
+/**/
+/* .linksTree {} */
+/**/
+/* .linksTree__nav {} */
+
+.linksTree__list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.linksTree__item {
+  a {
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    color: $color-blu-argentinian;
+
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $color-blu-navy;
+    }
+  }
+}
+
+.linksTree__item--active {
+  position: relative;
+
+  color: $color-blu-navy;
+
+  &:hover {
+    &:before {
+      color: $color-blu-navy;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    left: -10px;
+
+    content: '•';
+
+    transition: color 0.25s ease;
+    color: $color-blu-argentinian;
+  }
+}

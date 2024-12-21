@@ -3,7 +3,7 @@ import { IRouter } from '../services/router.service';
 type QuerySelector = (
   this: Document | HTMLElement,
   args: string
-) => Element | null;
+) => Element | HTMLElement | null;
 
 type QuerySelectorAll = (
   this: Document | HTMLElement,

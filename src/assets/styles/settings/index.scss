@@ -1,12 +1,9 @@
-@use "./variables/index.scss" as *;
-@forward "./variables/index.scss";
+@use './variables/index.scss' as *;
+@forward './variables/index.scss';
 
 /* colors */
 $color-primary: $color-blu-indigo;
 $color-secondary: $color-wh-lightsilv;
-
-/* $blu-argentinian: #6cb4ee; // Argentinan Blue */
-/* $blu-defrance: #318ce7; // Blue de france */
 
 $color-accent: $color-blu-argentinian;
 $color-downplay: $color-wh-silver;

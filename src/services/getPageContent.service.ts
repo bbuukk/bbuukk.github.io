@@ -8,7 +8,7 @@ export default async function getPageContent(route: string): Promise<string> {
   const contentPath = routes[route] || routes['default'];
 
   try {
-    const response = await fetch(contentPath);
+    const response = await fetch(`${contentPath}?html`);
     return await response.text();
   } catch (error) {
     // TODO: display error screen

@@ -2,22 +2,30 @@
 @use 'elements/index' as *;
 @use 'utils/index' as *;
 
+@use 'elements/' as *;
+
 @use 'settings/reset.scss' as *;
 @use 'settings/normalize.scss' as *;
 
+@use 'pages/home' as *;
+
 html {
   overscroll-behavior: none;
+  overflow: hidden;
+
   font-family: $font-ubuntu;
 
   body {
-    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
 
     overflow: hidden;
 
     font-weight: 400;
-
     color: $color-primary;
-
     background-color: $color-background;
 
     a {
