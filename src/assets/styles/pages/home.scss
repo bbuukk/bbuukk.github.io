@@ -2,7 +2,7 @@
 @use '@styles/settings/index' as *;
 
 /* $image-url: 'https://images.sftcdn.net/images/t_app-icon-m/p/c828c686-96d4-11e6-bce4-00163ec9f5fa/2413414525/nmap-icon.png'; */
-$image-url: '/eyeanimation.gif';
+$image-url: '/eyeanimation3.gif';
 $gradient-color-1: lighten($color-primary, 50);
 $gradient-color-2: lighten($color-primary, 45);
 
@@ -98,60 +98,86 @@ $shadow-anim-time: 3s;
   white-space: nowrap;
 }
 
+/* .foo { */
+/*   z-index: 100; */
+/*   position: relative; */
+/*   bottom: 50px; */
+/**/
+/*   width: 500px; */
+/*   height: 500px; */
+/**/
+/*   /* transform: rotate(90deg); */
+/**/
+/*   text { */
+/*     transform: rotate(45deg); */
+/*   } */
+/* } */
+
 /* .legend__greetings { */
 /* } */
 /**/
 /* .legend__motivation { */
 /* } */
 /**/
-/* .linksTree {} */
+.linksTree {
+  position: absolute;
+  bottom: 25%;
+}
+
 /**/
-/* .linksTree__nav {} */
+.linksTree__nav {}
 
 .linksTree__list {
   display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
+  flex-flow: row nowrap;
+  gap: 30px;
 
-  position: absolute;
+  font-weight: bold;
 }
 
 .linksTree__item {
   a {
+    background-image: linear-gradient(to right,
+        $color-blu-indigo,
+        $color-blu-navy );
+    background-clip: text;
+    background-size: 150% 100%;
+
+    color: transparent;
+
     text-transform: uppercase;
+    text-decoration: none;
     white-space: nowrap;
 
-    color: $color-blu-argentinian;
-
-    transition: color 0.25s ease;
+    transition: background-position 0.3s ease;
 
     &:hover {
-      color: $color-blu-navy;
+      background-position: 100%;
     }
   }
 }
 
-.linksTree__item--active {
-  position: relative;
-
-  color: $color-blu-navy;
-
-  &:hover {
-    &:before {
-      color: $color-blu-navy;
-    }
-  }
-
-  &:before {
-    position: absolute;
-    left: -10px;
-
-    content: '•';
-
-    transition: color 0.25s ease;
-    color: $color-blu-argentinian;
-  }
-}
+/* .linksTree__item--active { */
+/*   position: relative; */
+/**/
+/*   color: $color-blu-navy; */
+/**/
+/*   &:hover { */
+/*     &:before { */
+/*       color: $color-blu-navy; */
+/*     } */
+/*   } */
+/**/
+/*   &:before { */
+/*     position: absolute; */
+/*     left: -10px; */
+/**/
+/*     content: '•'; */
+/**/
+/*     transition: color 0.25s ease; */
+/*     color: $color-blu-argentinian; */
+/*   } */
+/* } */
 
 @mixin generate-keyframes {
   @for $i from 0 through 100 {
