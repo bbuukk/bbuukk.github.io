@@ -13,7 +13,7 @@ html {
   overscroll-behavior: none;
   overflow: hidden;
 
-  font-family: $font-ubuntu;
+  font-family: $font-ubuntu, sans-serif;
 
   body {
     display: flex;
@@ -32,4 +32,18 @@ html {
       cursor: pointer;
     }
   }
+
+  .emoji {
+    font-family: $font-noto-color, $font-noto;
+  }
 }
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 700
+
+/* .noto-emoji-<uniquifier> { */
+/*   font-family: "Noto Emoji", serif; */
+/*   font-optical-sizing: auto; */
+/*   font-weight: <weight>; */
+/*   font-style: normal; */
+/* } */

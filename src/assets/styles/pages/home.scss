@@ -1,18 +1,86 @@
 @use '@styles/elements/index' as *;
 @use '@styles/settings/index' as *;
 
+/* $image-url: 'https://images.sftcdn.net/images/t_app-icon-m/p/c828c686-96d4-11e6-bce4-00163ec9f5fa/2413414525/nmap-icon.png'; */
+$image-url: '/eyeanimation.gif';
+$gradient-color-1: lighten($color-primary, 50);
+$gradient-color-2: lighten($color-primary, 45);
+
+$peek-anim-time: 2.5s;
+$waves-anim-time: 2s;
+$shadow-anim-time: 3s;
+
+.perspective {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
 .container--home {
-  @extend .container;
+  height: 150vh;
+  width: 200vw;
+
+  background: url($image-url),
+    repeating-radial-gradient(circle at center,
+      $gradient-color-1,
+      $gradient-color-2 50px);
+  background-size:
+    70px 50px,
+    400vw 300vh;
+  background-repeat: no-repeat;
+
+  transform: rotateX(15deg);
 
   display: flex;
   flex-flow: row nowrap;
 
   justify-content: center;
   align-items: center;
+
+  animation: $peek-anim-time ease forwards waves,
+  $waves-anim-time ease #{$peek-anim-time - 0.1s} forwards changeGradientWidth;
+}
+
+@keyframes waves {
+  0% {
+    background-position: center, center;
+  }
+
+  90% {
+    background-position:
+      45% 30%,
+      55% 70%;
+  }
+
+  100% {
+    background-position: center, center;
+  }
+}
+
+@keyframes child {
+  0% {
+    box-shadow: 0 0 500px 20px lighten($color: $color-primary, $amount: 50) inset;
+  }
+
+  50% {
+    box-shadow: 0 0 500px 20px lighten($color: $color-primary, $amount: 30) inset;
+  }
+
+  100% {
+    box-shadow: 0 0 500px 1px lighten($color: $color-primary, $amount: 30) inset;
+  }
 }
 
 .legend {
-  padding: 0 5rem;
+  /* display: none; */
+  border-radius: 50%;
+  overflow: hidden;
+
+  background-color: white;
+  box-shadow: 0 0 500px 20px lighten($color: $color-primary, $amount: 50) inset;
+
+  position: absolute;
+
+  animation: $shadow-anim-time ease #{$peek-anim-time + $waves-anim-time - 0.5} forwards child;
 }
 
 .legend__text {
@@ -24,15 +92,10 @@
   width: 500px;
   height: 500px;
 
-  border-radius: 50%;
-  border: 1rem dotted lighten($color: $color-blu-defrance, $amount: 30%);
-
   text-align: center;
   font-size: 1.2rem;
 
-  span {
-    display: block;
-  }
+  white-space: nowrap;
 }
 
 /* .legend__greetings { */
@@ -49,6 +112,8 @@
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
+
+  position: absolute;
 }
 
 .linksTree__item {
@@ -86,4 +151,19 @@
     transition: color 0.25s ease;
     color: $color-blu-argentinian;
   }
+}
+
+@mixin generate-keyframes {
+  @for $i from 0 through 100 {
+    #{$i}% {
+      background-image: url($image-url),
+      repeating-radial-gradient(circle at center,
+        $gradient-color-1,
+        $gradient-color-2 #{0 + $i}px);
+    }
+  }
+}
+
+@keyframes changeGradientWidth {
+  @include generate-keyframes;
 }
