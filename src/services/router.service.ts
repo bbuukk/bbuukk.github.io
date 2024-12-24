@@ -1,5 +1,7 @@
 import getPageContent from './getPageContent.service';
 
+import '/pages/home.ts';
+
 export interface IRouter {
   init: () => void;
   go: (route: string, addToHistory?: boolean) => Promise<void>;

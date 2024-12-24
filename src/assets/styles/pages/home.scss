@@ -36,11 +36,14 @@ $shadow-anim-time: 3s;
   justify-content: center;
   align-items: center;
 
-  animation: $peek-anim-time ease forwards waves,
-  $waves-anim-time ease #{$peek-anim-time - 0.1s} forwards changeGradientWidth;
+  animation: $peek-anim-time ease forwards peek,
+  $waves-anim-time ease #{$peek-anim-time - 0.1s} forwards waves,
+  10s infinite #{$peek-anim-time + $waves-anim-time - 0.1} forwards waves-mild;
+
+  /* animation: ; */
 }
 
-@keyframes waves {
+@keyframes peek {
   0% {
     background-position: center, center;
   }
@@ -98,34 +101,10 @@ $shadow-anim-time: 3s;
   white-space: nowrap;
 }
 
-/* .foo { */
-/*   z-index: 100; */
-/*   position: relative; */
-/*   bottom: 50px; */
-/**/
-/*   width: 500px; */
-/*   height: 500px; */
-/**/
-/*   /* transform: rotate(90deg); */
-/**/
-/*   text { */
-/*     transform: rotate(45deg); */
-/*   } */
-/* } */
-
-/* .legend__greetings { */
-/* } */
-/**/
-/* .legend__motivation { */
-/* } */
-/**/
 .linksTree {
   position: absolute;
   bottom: 25%;
 }
-
-/**/
-.linksTree__nav {}
 
 .linksTree__list {
   display: flex;
@@ -137,6 +116,8 @@ $shadow-anim-time: 3s;
 
 .linksTree__item {
   a {
+    border-bottom: 1px solid transparent;
+
     background-image: linear-gradient(to right,
         $color-blu-indigo,
         $color-blu-navy );
@@ -149,35 +130,20 @@ $shadow-anim-time: 3s;
     text-decoration: none;
     white-space: nowrap;
 
-    transition: background-position 0.3s ease;
+    transition:
+      background-position 0.25s ease,
+      border-color 0.25s ease;
 
     &:hover {
       background-position: 100%;
+      border-bottom: 1px solid $color-blu-indigo;
     }
   }
 }
 
-/* .linksTree__item--active { */
-/*   position: relative; */
-/**/
-/*   color: $color-blu-navy; */
-/**/
-/*   &:hover { */
-/*     &:before { */
-/*       color: $color-blu-navy; */
-/*     } */
-/*   } */
-/**/
-/*   &:before { */
-/*     position: absolute; */
-/*     left: -10px; */
-/**/
-/*     content: '•'; */
-/**/
-/*     transition: color 0.25s ease; */
-/*     color: $color-blu-argentinian; */
-/*   } */
-/* } */
+.linksTree__item--active {
+  text-decoration: underline;
+}
 
 @mixin generate-keyframes {
   @for $i from 0 through 100 {
@@ -190,6 +156,6 @@ $shadow-anim-time: 3s;
   }
 }
 
-@keyframes changeGradientWidth {
+@keyframes waves {
   @include generate-keyframes;
 }

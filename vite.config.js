@@ -21,14 +21,13 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': '/',
+      // '/': resolve(__dirname, './src'),
+      '@': resolve(__dirname, './src'),
       '@styles': resolve(__dirname, './src/assets/styles')
     },
     extensions: ['.js', '.ts', '.jsx', '.tsx']
   },
   server: {
     port: 3000
-    // host: 'localhost',
-    // base: './'
   }
 });
