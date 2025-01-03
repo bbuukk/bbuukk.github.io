@@ -26,6 +26,9 @@ $shadow-anim-time: 3s;
   background-size:
     70px 50px,
     400vw 300vh;
+
+  background-position: center, center;
+
   background-repeat: no-repeat;
 
   transform: rotateX(15deg);
@@ -36,9 +39,9 @@ $shadow-anim-time: 3s;
   justify-content: center;
   align-items: center;
 
-  animation: $peek-anim-time ease forwards peek,
-  $waves-anim-time ease #{$peek-anim-time - 0.1s} forwards waves,
-  10s infinite #{$peek-anim-time + $waves-anim-time - 0.1} forwards waves-mild;
+  /* animation: $peek-anim-time ease forwards peek, */
+  /* $waves-anim-time ease #{$peek-anim-time - 0.1s} forwards waves, */
+  /* 10s infinite #{$peek-anim-time + $waves-anim-time - 0.1} forwards waves-mild; */
 
   /* animation: ; */
 }
@@ -83,7 +86,8 @@ $shadow-anim-time: 3s;
 
   position: absolute;
 
-  animation: $shadow-anim-time ease #{$peek-anim-time + $waves-anim-time - 0.5} forwards child;
+  box-shadow: 0 0 500px 1px lighten($color: $color-primary, $amount: 30) inset;
+  /* animation: $shadow-anim-time ease #{$peek-anim-time + $waves-anim-time - 0.5} forwards child; */
 }
 
 .legend__text {

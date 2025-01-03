@@ -1,6 +1,8 @@
-import getPageContent from './getPageContent.service';
-
-import '/pages/home.ts';
+const routes: Record<string, string> = {
+  '/': 'home',
+  '/google': 'google',
+  default: 'error'
+};
 
 export interface IRouter {
   init: () => void;
@@ -25,25 +27,63 @@ const Router: IRouter = {
       history.pushState({ route }, 'null', route);
     }
 
-    const pageContent = await getPageContent(route);
+    // const pageContent = await getPageContent(route);
 
     const mainElement = $('main');
     if (mainElement) {
       mainElement.innerHTML = '';
 
+      const contentPath = routes[route] || routes['default'];
+
+      const htmlRes = await import(`@/pages/${contentPath}/index.html?raw`);
+      const htmlString = htmlRes.default;
+      //
       const contentElement = document.createElement('div');
-      contentElement.innerHTML = pageContent;
+      contentElement.innerHTML = htmlString;
 
       mainElement.appendChild(contentElement);
 
       window.scrollY = 0;
       window.scrollX = 0;
 
+      const cssRes = await import(`@/pages/${contentPath}/index.scss?raw`);
+      const cssString = cssRes.default;
+
+      const styleElement = document.createElement('style');
+      styleElement.innerHTML = cssString;
+
+      mainElement.appendChild(styleElement);
+
+      //create custom event for signaling of changing route
+      //and fetch all the necessasry stuff and set html and styles when it is fired
+
+      await import(`/pages/${contentPath}/index.ts`);
+
       hydrateInternalLinks('inLink');
     }
   }
 };
 
+// function reloadContent() {
+//   const mainElement = $('main');
+//   if (mainElement) {
+//     mainElement.innerHTML = '';
+//
+//     const contentElement = document.createElement('div');
+//     // contentElement.innerHTML = pageContent;
+//
+//     // await import('/pages/home.ts');
+//
+//     mainElement.appendChild(contentElement);
+//
+//     window.scrollY = 0;
+//     window.scrollX = 0;
+//
+//     hydrateInternalLinks('inLink');
+//   }
+// }
+
+// TODO: rename, as it is not hydration
 function hydrateInternalLinks(inLinkClass: string) {
   const internalLinks = $$(`a.${inLinkClass}`);
 
