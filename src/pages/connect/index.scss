@@ -1,2 +1,76 @@
+@use '@styles/elements/index' as *;
+@use '@styles/settings/index' as *;
 
+.container--connect {
+  @extend .container;
 
+  display: flex;
+  flex-flow: row nowrap;
+
+  position: relative;
+}
+
+.contactsInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+
+  position: absolute;
+  left: 100%;
+  top: 45%;
+
+  border-left: 5px solid $color-primary;
+  padding: 1rem;
+}
+
+svg {
+  height: 30vw;
+  width: 30vw;
+}
+
+svg circle {
+  fill: transparent;
+}
+
+path {
+}
+
+#part1 {
+  fill: $color-background;
+}
+
+#part2 {
+  fill: $color-background;
+}
+
+#part3 {
+  fill: $color-background;
+}
+
+#inner {
+  fill: $color-background;
+}
+
+#part1:hover,
+#part2:hover,
+#part3:hover {
+  cursor: pointer;
+}
+
+text {
+  user-select: none;
+
+  fill: $color-primary;
+
+  transition: fill 0.25s ease;
+
+  &:hover {
+    /* fill: $color-blu-navy; */
+    fill: red;
+  }
+}
+
+path:hover + text {
+  /* fill: $color-blu-navy; */
+  fill: red;
+}
