@@ -1,10 +1,6 @@
-@use "@styles/settings/index" as *;
+@use '@styles/settings/index' as *;
 
 .link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   transition: color 0.25s ease-in-out;
 }
 
@@ -12,6 +8,7 @@
   @extend .link;
 
   color: $color-primary;
+
   &:hover {
     color: $color-accent;
   }
