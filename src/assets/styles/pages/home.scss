@@ -20,9 +20,11 @@ $shadow-anim-time: 3s;
   width: 200vw;
 
   background: url($image-url),
-    repeating-radial-gradient(circle at center,
+    repeating-radial-gradient(
+      circle at center,
       $gradient-color-1,
-      $gradient-color-2 50px);
+      $gradient-color-2 50px
+    );
   background-size:
     70px 50px,
     400vw 300vh;
@@ -64,11 +66,13 @@ $shadow-anim-time: 3s;
 
 @keyframes child {
   0% {
-    box-shadow: 0 0 500px 20px lighten($color: $color-primary, $amount: 50) inset;
+    box-shadow: 0 0 500px 20px lighten($color: $color-primary, $amount: 50)
+      inset;
   }
 
   50% {
-    box-shadow: 0 0 500px 20px lighten($color: $color-primary, $amount: 30) inset;
+    box-shadow: 0 0 500px 20px lighten($color: $color-primary, $amount: 30)
+      inset;
   }
 
   100% {
@@ -122,9 +126,11 @@ $shadow-anim-time: 3s;
   a {
     border-bottom: 1px solid transparent;
 
-    background-image: linear-gradient(to right,
-        $color-blu-indigo,
-        $color-blu-navy );
+    background-image: linear-gradient(
+      to right,
+      $color-blu-indigo,
+      $color-blu-navy
+    );
     background-clip: text;
     background-size: 150% 100%;
 
@@ -153,9 +159,11 @@ $shadow-anim-time: 3s;
   @for $i from 0 through 100 {
     #{$i}% {
       background-image: url($image-url),
-      repeating-radial-gradient(circle at center,
-        $gradient-color-1,
-        $gradient-color-2 #{0 + $i}px);
+        repeating-radial-gradient(
+          circle at center,
+          $gradient-color-1,
+          $gradient-color-2 #{0 + $i}px
+        );
     }
   }
 }

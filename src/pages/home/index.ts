@@ -1,6 +1,6 @@
-console.log('home loaded');
+import { reloadContent } from '/services/router.service';
 
-document.on('DOMContentLoaded', () => {
-  const mainEl = $('main') as HTMLElement;
-  console.log(mainEl);
-});
+import html from '@/pages/home/index.html?raw';
+import scss from '@/pages/home/index.scss?inline';
+
+reloadContent(html, scss);
