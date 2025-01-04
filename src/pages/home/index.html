@@ -2,13 +2,18 @@
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 100 300"
   style="width: 100%; height: 300vh"
+  class="snake"
 >
-  <rect width="100%" height="100%" fill="lightblue" />
-  <circle cx="50" cy="150" r="20" fill="orange" />
-  <text x="50%" y="50%" font-size="5" text-anchor="middle" fill="black">
-    My SVG
-  </text>
+  <path
+    d="M 36,0
+    L 36, 100
+    C 36,130 20,80 20,120
+    L 20, 170
+    C 20,220 85,150 150,180"
+    style="stroke-width: 2px; fill: none; stroke: #1e3a5f"
+  ></path>
 </svg>
+
 <div class="container--home">
   <div class="businessCard">
     <div class="legend">
@@ -46,7 +51,7 @@
       </p>
     </div>
 
-    <div class="verticalDivider"></div>
+    <!-- <div class="verticalDivider"></div> -->
 
     <div class="todo">
       <img
@@ -124,7 +129,7 @@
           <!-- /> -->
         </div>
 
-        <div class="verticalDivider"></div>
+        <!-- <div class="verticalDivider"></div> -->
 
         <div class="about">
           <h4 class="about__heading">
@@ -198,6 +203,7 @@
         </div>
         <div class="hobby">
           <div class="hobby__text">
+            <!-- TODO: make word scketches colorder in rainbow -->
             I like doing scketches.
             <br />
             <br />

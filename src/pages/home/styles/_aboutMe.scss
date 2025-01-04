@@ -4,6 +4,7 @@
 .aboutMe {
   padding: 1rem;
   margin-top: 50px;
+  color: black;
 }
 
 .aboutMe__heading {
@@ -13,7 +14,7 @@
 
   max-width: max-content;
 
-  border-bottom: 15px solid $color-primary;
+  /* border-bottom: 15px solid $color-primary; */
 
   font-size: 3rem;
 }
