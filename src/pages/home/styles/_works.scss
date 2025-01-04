@@ -1,0 +1,81 @@
+@use '@styles/elements/index' as *;
+@use '@styles/settings/index' as *;
+
+.works {
+  margin-top: 80px;
+  width: 100vw;
+
+  /* border-top: 1px dotted blue; */
+}
+
+.works__heading {
+  position: relative;
+  left: 10%;
+
+  font-size: 3rem;
+
+  /* color: $color-rd-decapink; */
+}
+
+.work {
+  display: grid;
+
+  grid-template-columns: 230px 230px 15px 1fr 100px;
+  grid-template-rows: 1fr 1fr;
+
+  grid-template-areas:
+    'hero hero divider about about'
+    'hero hero divider about about';
+}
+
+.work__heroGallery {
+  grid-area: hero;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+
+  img {
+    object-position: center;
+    object-fit: contain;
+  }
+}
+
+.about {
+  grid-area: about;
+
+  padding: 3rem 2rem;
+  /* background: blue; */
+}
+
+.about__heading {
+  font-size: 2rem;
+}
+
+.about__caption {
+}
+
+.about__description {
+  padding: 2rem 0;
+
+  font-size: 1.3rem;
+
+  list-style: square;
+}
+
+.about__descriptionItem {
+  margin-bottom: 1rem;
+
+  span {
+    display: block;
+
+    /* color: lighten($color: $color-primary, $amount: 20); */
+    opacity: 0.5;
+
+    font-size: 1rem;
+  }
+}

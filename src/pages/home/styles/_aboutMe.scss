@@ -1,0 +1,112 @@
+@use '@styles/elements/index' as *;
+@use '@styles/settings/index' as *;
+
+.aboutMe {
+  padding: 1rem;
+  margin-top: 50px;
+}
+
+.aboutMe__heading {
+  position: relative;
+  width: 100%;
+  left: 70%;
+
+  max-width: max-content;
+
+  border-bottom: 15px solid $color-primary;
+
+  font-size: 3rem;
+}
+
+.aboutMe__text {
+  padding: 3rem 5rem;
+
+  font-size: 1.5rem;
+}
+
+.aboutMe__hobbies {
+}
+
+.hobby {
+  display: flex;
+
+  min-height: 25rem;
+
+  /* border: 1px dotted blue; */
+}
+
+.hobby__text {
+  flex: 0 1 40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 3rem;
+}
+
+.aboutMe__hobbiesText {
+  margin-bottom: 2rem;
+}
+
+.hobby__photos {
+  flex: 1 1 60%;
+
+  padding: 50px;
+}
+
+.hobby__photos--sketch {
+  @extend .hobby__photos;
+
+  position: relative;
+
+  & > img {
+    position: absolute;
+  }
+
+  & > img:nth-child(1) {
+    left: 0;
+    bottom: 10%;
+  }
+
+  & > img:nth-child(2) {
+    right: 10%;
+  }
+
+  & > img:nth-child(3) {
+    top: 10%;
+    left: 50%;
+    height: 30%;
+    width: 30%;
+  }
+
+  & > img:nth-child(4) {
+    height: 30%;
+    width: 30%;
+    bottom: 10%;
+    left: 40%;
+  }
+
+  & > img:nth-child(5) {
+    /* display: none; */
+    z-index: -1;
+    left: 30%;
+  }
+}
+
+.hobby__photo {
+  height: 300px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.hobby__photo--bushy {
+  height: 500px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.aboutMe__postface {
+  max-width: 50%;
+  margin: auto;
+}

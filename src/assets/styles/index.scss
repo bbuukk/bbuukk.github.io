@@ -9,18 +9,14 @@
 
 html {
   overscroll-behavior: none;
-  overflow: hidden;
+  overflow-x: hidden;
 
   font-family: $font-ubuntu, sans-serif;
 
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
 
-    height: 100vh;
-
-    overflow: hidden;
+    overflow-x: hidden;
 
     font-weight: 400;
     color: $color-primary;

@@ -1,0 +1,83 @@
+@use '@styles/elements/index' as *;
+@use '@styles/settings/index' as *;
+
+.businessCard {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+
+.legend {
+  flex: 0 2 40%;
+
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  padding: 4rem 1rem;
+
+  font-size: 10rem;
+
+  user-select: none;
+}
+
+.legend__greetings {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0px;
+  align-items: end;
+
+  span {
+    user-select: none;
+  }
+
+  svg {
+    width: 0.1em;
+    height: 0.1em;
+
+    position: relative;
+    bottom: 20px;
+
+    circle {
+      fill: $color-rd-decapink;
+    }
+
+    rect {
+      stroke: $color-rd-decapink;
+    }
+  }
+}
+
+.legend__motivation {
+  padding: 5rem;
+  font-size: 2rem;
+}
+
+.todo {
+  flex: 1 2 48%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  align-items: center;
+
+  height: 100vh;
+
+  padding: 4rem 1rem;
+}
+
+.todo__photo {
+  margin: auto;
+}
+
+.todo__text {
+  max-width: 400px;
+
+  color: $color-primary;
+
+  font-size: 1.3rem;
+}

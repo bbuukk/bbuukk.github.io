@@ -47,8 +47,8 @@ function reloadContent(html: string, css: string) {
     styleElement.innerHTML = css;
     mainElement.appendChild(styleElement);
 
-    window.scrollY = 0;
-    window.scrollX = 0;
+    // window.scrollY = 0;
+    // window.scrollX = 0;
 
     hydrateInternalLinks('inLink');
   }
