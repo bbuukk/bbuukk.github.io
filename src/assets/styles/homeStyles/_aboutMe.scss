@@ -14,7 +14,7 @@
 
   max-width: max-content;
 
-  /* border-bottom: 15px solid $color-primary; */
+  border-bottom: 15px solid $color-primary;
 
   font-size: 3rem;
 }
@@ -25,8 +25,7 @@
   font-size: 1.5rem;
 }
 
-.aboutMe__hobbies {
-}
+.aboutMe__hobbies {}
 
 .hobby {
   display: flex;
@@ -61,34 +60,34 @@
 
   position: relative;
 
-  & > img {
+  &>img {
     position: absolute;
   }
 
-  & > img:nth-child(1) {
+  &>img:nth-child(1) {
     left: 0;
     bottom: 10%;
   }
 
-  & > img:nth-child(2) {
+  &>img:nth-child(2) {
     right: 10%;
   }
 
-  & > img:nth-child(3) {
+  &>img:nth-child(3) {
     top: 10%;
     left: 50%;
     height: 30%;
     width: 30%;
   }
 
-  & > img:nth-child(4) {
+  &>img:nth-child(4) {
     height: 30%;
     width: 30%;
     bottom: 10%;
     left: 40%;
   }
 
-  & > img:nth-child(5) {
+  &>img:nth-child(5) {
     /* display: none; */
     z-index: -1;
     left: 30%;

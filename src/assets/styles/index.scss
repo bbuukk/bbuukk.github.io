@@ -7,6 +7,10 @@
 @use 'settings/reset.scss' as *;
 @use 'settings/normalize.scss' as *;
 
+@use './homeStyles/businessCard' as *;
+@use './homeStyles/works' as *;
+@use './homeStyles/aboutMe' as *;
+
 html {
   overscroll-behavior: none;
   overflow-x: hidden;
@@ -41,3 +45,22 @@ html {
 /*   font-weight: <weight>; */
 /*   font-style: normal; */
 /* } */
+
+.container--home {
+}
+
+.verticalDivider {
+  flex-grow: 0;
+  /* position: sticky; */
+  /* top: 0; */
+  grid-area: divider;
+
+  width: 15px;
+
+  background: $color-primary;
+}
+
+.snake {
+  position: absolute;
+  /* z-index: 10; */
+}
