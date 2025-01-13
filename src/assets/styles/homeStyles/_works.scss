@@ -18,18 +18,19 @@
 }
 
 .work {
-  display: grid;
+  display: flex;
 
-  grid-template-columns: 230px 230px 15px 1fr 100px;
-  grid-template-rows: 1fr 1fr;
-
-  grid-template-areas:
-    'hero hero divider about about'
-    'hero hero divider about about';
+  /* grid-template-columns: 230px 230px 15px 1fr 100px; */
+  /* grid-template-rows: 1fr 1fr; */
+  /**/
+  /* grid-template-areas: */
+  /*   'hero hero divider about about' */
+  /*   'hero hero divider about about'; */
 }
 
-.work__heroGallery {
-  grid-area: hero;
+.work__demo {
+  flex: 1 1 30%;
+  /* grid-area: hero; */
 
   display: flex;
   flex-flow: row wrap;
@@ -46,7 +47,8 @@
 }
 
 .about {
-  grid-area: about;
+  flex: 1 1 70%;
+  /* grid-area: about; */
 
   padding: 3rem 2rem;
   /* background: blue; */
