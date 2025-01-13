@@ -8,7 +8,7 @@ export default defineConfig({
   publicDir: resolve(__dirname, './public'),
   envDir: __dirname,
   plugins: [Inspect()],
-  base: '/bbuukk.github.io/',
+  base: '/pfl/',
   build: {
     outDir: resolve(__dirname, './dist')
     // base: '/'
